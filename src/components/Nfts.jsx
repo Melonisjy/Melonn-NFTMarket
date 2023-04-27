@@ -41,14 +41,14 @@ const Nfts = ({ page, mintedNft }) => {
         <button
           key={i}
           className={`${i !== 0 && "ml-4"} ${
-            i + 1 === selectedPage ? "text-black" : "text-gray-400"
+            i + 1 === selectedPage ? "text-white" : "text-gray-400"
           }`}
           onClick={() => {
             setSelectedPage(i + 1);
             getNfts(i + 1);
           }}
         >
-          {i + 1} <span className="font-subtitle">page</span>
+          {i + 1}
         </button>
       );
     }
@@ -64,11 +64,13 @@ const Nfts = ({ page, mintedNft }) => {
 
   return (
     <div>
-      <div className="justify-start flex">{pageComp()}</div>
       <ul className="mt-8 grid grid-cols-2 xl:grid-cols-5 justify-items-center px-32">
         {nfts?.map((v, i) => {
           return (
-            <div key={i} className="relative my-10">
+            <div
+              key={i}
+              className="relative my-10 hover:scale-110 transition duration-200"
+            >
               {parseInt(mintedNft) < v.tokenId && (
                 <div className="absolute bg-black w-full h-full bg-opacity-50 rounded-xl flex justify-center items-center text-4xl font-bold">
                   <MdOutlineDoNotDisturbOn
@@ -82,7 +84,7 @@ const Nfts = ({ page, mintedNft }) => {
                 src={v.metadata.image}
                 alt={v.metadata.name}
               />
-              <div className="relative bg-orange-300 rounded-b-xl">
+              <div className="relative bg-slate-100 rounded-b-xl">
                 <div className="font-display flex items-center gap-2 pt-4 px-2 font-light text-black text-sm">
                   Melon Cafe
                   <div className="text-green-500">
@@ -104,6 +106,7 @@ const Nfts = ({ page, mintedNft }) => {
           );
         })}
       </ul>
+      <div className="justify-center flex pb-8">{pageComp()}</div>
     </div>
   );
 };

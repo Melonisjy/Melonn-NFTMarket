@@ -10,7 +10,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="bg-white">
+      <div className="bg-black">
         <Header
           account={account}
           setAccount={setAccount}
