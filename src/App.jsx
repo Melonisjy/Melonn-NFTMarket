@@ -24,7 +24,7 @@ function App() {
               <Main account={account} myNft={myNft} setMyNft={setMyNft} />
             }
           />
-          <Route path="/:tokenId" element={<Detail />} />
+          <Route path="/detail/:tokenId" element={<Detail />} />
         </Routes>
       </div>
     </BrowserRouter>
