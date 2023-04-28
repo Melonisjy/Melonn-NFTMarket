@@ -12,7 +12,7 @@ const Intro = ({ totalNft, mintedNft, account }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       const ranNum = Math.floor(Math.random() * 100) + 1;
-      const newImgSrc = `https://olbm.mypinata.cloud/ipfs/QmZFYTWVwqDmBnHjNGaA1Xoxxf4kg22RexEVdZeCnh1oKA/${ranNum}.png`;
+      const newImgSrc = `${process.env.REACT_APP_IMAGE_URL}/${ranNum}.png`;
       setImgSrc(newImgSrc);
     }, 1000);
 
