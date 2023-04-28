@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BsCheckCircleFill, BsSearch } from "react-icons/bs";
+import { BsCheckCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { CONTRACT_ADDRESS, NFT_ADDRESS } from "../web3.config";
 
