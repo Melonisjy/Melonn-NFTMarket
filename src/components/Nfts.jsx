@@ -64,7 +64,7 @@ const Nfts = ({ page, mintedNft }) => {
 
   return (
     <div>
-      <ul className="mt-8 grid grid-cols-2 xl:grid-cols-5 justify-items-center px-32">
+      <ul className=" mt-8 grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 desktop:grid-cols-5 justify-items-center px-32">
         {nfts?.map((v, i) => {
           return (
             <div
@@ -80,25 +80,26 @@ const Nfts = ({ page, mintedNft }) => {
                 </div>
               )}
               <img
-                className="w-52 rounded-t-xl"
+                className="desktop:w-52 laptop:w-40 tablet:w-32 w-28 rounded-t-xl"
                 src={v.metadata.image}
                 alt={v.metadata.name}
               />
-              <div className="relative bg-slate-100 rounded-b-xl">
-                <div className="font-display flex items-center gap-2 pt-4 px-2 font-light text-black text-sm">
+              <div className="relative bg-slate-100 rounded-b-xl desktop:w-52 laptop:w-40 tablet:w-32 w-28">
+                <div className="font-display flex items-center gap-2 pt-4 px-2 font-light text-black desktop:text-sm">
                   Melon Cafe
                   <div className="text-green-500">
                     <BsCheckCircleFill />
                   </div>
                 </div>
-                <div className="text-base font-display px-2 font-bold">
+                <div className="text-base font-display px-2 font-bold pb-2">
                   Melon Cafe # {v.tokenId}
                 </div>
-                <Link to={`${v.tokenId}`}>
-                  <button disabled={parseInt(mintedNft) < v.tokenId}>
-                    <div className="absolute top-0 right-1 font-display text-2xl">
-                      ⋮
-                    </div>
+                <Link to={`/detail/${v.tokenId}`}>
+                  <button
+                    className="absolute top-0 right-1 font-display text-2xl"
+                    disabled={parseInt(mintedNft) < v.tokenId}
+                  >
+                    ⋮
                   </button>
                 </Link>
               </div>
