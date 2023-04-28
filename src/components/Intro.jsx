@@ -6,13 +6,13 @@ import { CONTRACT_ADDRESS, NFT_ADDRESS } from "../web3.config";
 // const ranNum = Math.floor(Math.random() * 100) + 1;
 // const imgSrc = `https://olbm.mypinata.cloud/ipfs/QmZFYTWVwqDmBnHjNGaA1Xoxxf4kg22RexEVdZeCnh1oKA/${ranNum}.png`;
 
-const Intro = ({ totalNft, mintedNft, myNft, account }) => {
+const Intro = ({ totalNft, mintedNft, account }) => {
   const [imgSrc, setImgSrc] = useState("");
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       const ranNum = Math.floor(Math.random() * 100) + 1;
-      const newImgSrc = `https://olbm.mypinata.cloud/ipfs/QmZFYTWVwqDmBnHjNGaA1Xoxxf4kg22RexEVdZeCnh1oKA/${ranNum}.png`;
+      const newImgSrc = `${process.env.REACT_APP_IMAGE_URL}/${ranNum}.png`;
       setImgSrc(newImgSrc);
     }, 1000);
 

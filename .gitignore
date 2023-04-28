@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 web3.config.js
+.env
 
 # dependencies
 /node_modules

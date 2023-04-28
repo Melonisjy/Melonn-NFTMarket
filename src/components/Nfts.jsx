@@ -19,7 +19,7 @@ const Nfts = ({ page, mintedNft }) => {
         const tokenId = i + 1 + (p - 1) * 10;
 
         let response = await axios.get(
-          `https://olbm.mypinata.cloud/ipfs/QmR7bHyprjwkmDyaq5rxKUc5RoiKatfAocQwNayaHkPLBY/${tokenId}.json`
+          `${process.env.REACT_APP_JSON_URL}/${tokenId}.json`
         );
         nftArray.push({ tokenId, metadata: response.data });
       }

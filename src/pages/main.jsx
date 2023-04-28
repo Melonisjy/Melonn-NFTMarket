@@ -7,7 +7,7 @@ import Nfts from "../components/Nfts";
 const web3 = new Web3(window.ethereum);
 const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
 
-const Main = ({ account, myNft, setMyNft }) => {
+const Main = ({ account, myNftBalance, setMyNftBalance }) => {
   const [totalNft, setTotalNft] = useState(0);
   const [mintedNft, setMintedNft] = useState(0);
   const [page, setPage] = useState(1);
@@ -41,13 +41,13 @@ const Main = ({ account, myNft, setMyNft }) => {
     }
   };
 
-  const getMyNft = async () => {
+  const getMyNftBalance = async () => {
     try {
       if (!contract || !account) return;
 
       const response = await contract.methods.balanceOf(account).call();
 
-      setMyNft(response);
+      setMyNftBalance(response);
 
       console.log(response);
     } catch (error) {
@@ -61,7 +61,7 @@ const Main = ({ account, myNft, setMyNft }) => {
   }, []);
 
   useEffect(() => {
-    getMyNft();
+    getMyNftBalance();
   }, [account]);
 
   return (
@@ -69,7 +69,7 @@ const Main = ({ account, myNft, setMyNft }) => {
       <Intro
         totalNft={totalNft}
         mintedNft={mintedNft}
-        myNft={myNft}
+        myNfBalance={myNftBalance}
         account={account}
       />
       <Nfts page={page} mintedNft={mintedNft} />

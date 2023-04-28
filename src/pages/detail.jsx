@@ -31,7 +31,7 @@ const Detail = () => {
   const getNft = async () => {
     try {
       const response = await axios.get(
-        `https://olbm.mypinata.cloud/ipfs/QmR7bHyprjwkmDyaq5rxKUc5RoiKatfAocQwNayaHkPLBY/${tokenId}.json`
+        `${process.env.REACT_APP_JSON_URL}/${tokenId}.json`
       );
 
       setMetadata(response.data);

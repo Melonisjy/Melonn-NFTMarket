@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { SlWallet } from "react-icons/sl";
 import { AiOutlineDisconnect } from "react-icons/ai";
 import { VscAccount } from "react-icons/vsc";
 import { useState } from "react";
 
-const Header = ({ account, setAccount, myNft, setMyNft }) => {
+const Header = ({ account, setAccount, setMyNftBalance }) => {
   const [isLoading, setIsLoading] = useState(false);
+  // const { address } = useParams();
 
   const onClickAccount = async () => {
     try {
@@ -22,7 +23,7 @@ const Header = ({ account, setAccount, myNft, setMyNft }) => {
   const onClickDisconnect = async () => {
     try {
       setAccount("");
-      setMyNft(0);
+      setMyNftBalance(0);
     } catch (error) {
       console.error(error);
     }
@@ -94,6 +95,11 @@ const Header = ({ account, setAccount, myNft, setMyNft }) => {
                 <AiOutlineDisconnect />
                 <div className="font-title">Disconnect</div>
               </button>
+              <Link to={`/mynft/${account}`}>
+                <div className="bg-white text-black font-title text-sm p-2 ml-2 rounded-full flex justify-center items-center">
+                  <button className="">my Nft</button>
+                </div>
+              </Link>
             </div>
           )
         ) : (
