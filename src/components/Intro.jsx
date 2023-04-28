@@ -6,7 +6,7 @@ import { CONTRACT_ADDRESS, NFT_ADDRESS } from "../web3.config";
 // const ranNum = Math.floor(Math.random() * 100) + 1;
 // const imgSrc = `https://olbm.mypinata.cloud/ipfs/QmZFYTWVwqDmBnHjNGaA1Xoxxf4kg22RexEVdZeCnh1oKA/${ranNum}.png`;
 
-const Intro = ({ totalNft, mintedNft, myNft, account }) => {
+const Intro = ({ totalNft, mintedNft, account }) => {
   const [imgSrc, setImgSrc] = useState("");
 
   useEffect(() => {
