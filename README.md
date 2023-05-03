@@ -4,7 +4,7 @@
 Melonn NFT Marketplace
 
 ## 🔨 stacks
-`react.js` `web3.js`
+`react.js` `web3.js` `tailwind.css`
 
 ## :globe_with_meridians: link
 [vercel link](melonn-nft-market.vercel.app)
