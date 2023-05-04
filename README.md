@@ -7,7 +7,7 @@ Melonn NFT Marketplace
 `react.js` `web3.js` `tailwind.css`
 
 ## :globe_with_meridians: link
-[vercel link](melonn-nft-market.vercel.app)
+[vercel link](https://melonn-nft-market.vercel.app/)
 
 ## :technologist: period
 2023-04-27 ~ 2023-04-28
